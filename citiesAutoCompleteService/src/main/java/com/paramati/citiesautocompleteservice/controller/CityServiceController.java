@@ -24,7 +24,7 @@ public class CityServiceController {
 		 logger.info("[start:"+prefix+",atmost:"+atmost+"CityServiceController getCities method started");
 		 HttpHeaders httpHeaders = new HttpHeaders();
          httpHeaders.setContentType(org.springframework.http.MediaType.TEXT_PLAIN);
-		 if((null == prefix  || !prefix.trim().isEmpty())||  null ==atmost || atmost<0 ) {
+		 if((null == prefix  || prefix.trim().isEmpty())||  null ==atmost || atmost<0 ) {
 			 return new ResponseEntity<String>(CityServiceConstant.ERROR_REQUEST_INPUT_NOT_VALID,httpHeaders,HttpStatus.BAD_REQUEST);
 		 }
          String cities= cityService.getCities(prefix,atmost);
